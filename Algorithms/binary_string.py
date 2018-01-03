@@ -1,4 +1,3 @@
-max = 30
 x = []
 n = 5
 for i in range(n):
