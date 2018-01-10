@@ -6,7 +6,7 @@ for i in range(n):
 print(x)
 i = n-1
 while (True):
-    i = n-1;
+    i = n-1
     while (i >= 0 and x[i] == 1): 
         i = i - 1
 
