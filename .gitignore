@@ -1,2 +1,4 @@
 /Algorithms/algorithmsenv/
 /Algorithms/algorithms/
+*.pyc
+*.json
