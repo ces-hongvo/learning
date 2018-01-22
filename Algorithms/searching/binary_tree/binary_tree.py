@@ -51,7 +51,63 @@ class Node:
             self.key = maxChild.key
             maxChild.key = tmp
             maxChild.adjustHeap()
-        
+
+    def makeBST(self, x):
+        if(self.key == None):
+            self.key = x
+            return self
+        q = self
+        while(q != None):
+            if(q.key == x):
+                return self
+            elif (q.key > x):
+                if(q.left != None):
+                    q = q.left
+                else:
+                    q.insertLeft(Node(x))
+                    return self
+            elif (q.key < x):
+                if(q.right != None):
+                    q = q.right
+                else:
+                    q.insertRight(Node(x))
+                    return self
+        return self
+
+    def deleteInBST(self, x):
+        p = self
+        q = None #hold the parent during search
+        pNode = None #hold the processing node
+        cNode = None #hold the child node
+        while p != None:
+            if p.key == x:
+                break
+            q = p
+            if (x < p.key):
+                p = p.left
+            if (x > p.key):
+                p = p.right
+        if p == None:
+            return
+        if (p.left != None and p.right != None):
+            pNode = p
+            q = p
+            p = p.left
+            while(p.right != None):
+                q = p
+                p = p.right
+            pNode.key = p.key
+        else:
+            q = p.parent
+        if(p.left != None):
+            cNode = p.left
+        else:
+            cNode = p.right
+        if q.left == p:
+            q.left = cNode
+        else:
+            q.right = cNode
+        return
 
 def generateBinaryTree(depth, x):
     n = len(x)
