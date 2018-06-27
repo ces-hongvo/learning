@@ -2,3 +2,5 @@
 /Algorithms/algorithms/
 *.pyc
 *.json
+/.idea
+/venv
