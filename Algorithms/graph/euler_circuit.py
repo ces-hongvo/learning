@@ -34,7 +34,7 @@ def findEulerCircuit(a, n):
                 top = top + 1
                 break
         if u == stack[top]:
-            print(stack.pop())
+            print(stack.pop(), end=" ")
             top = top - 1
 
 findEulerCircuit(a, n)
