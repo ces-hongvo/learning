@@ -1,15 +1,16 @@
 #Two way Graph
 a = []
-n = 6 #vertices
-nd = 7 #times to repeat
-d = [] #distance
+n = 6
+d = []
+free=[]
 trace=[]
 start = 0
 end = 3
-maxC = 1000 #no path
+maxC = 1000 #max distance
 
 for i in range(n):
     d.append(maxC)
+    free.append(True)
     trace.append(-1)
     tmp = []
     for j in range(n):
@@ -29,19 +30,23 @@ for line in file:
     a[i][j] = k
     a[j][i] = k
 
-def ford_bellman(a, d, n, nd, start):
-    for i in range(nd):
-        stop = True
-        for u in range(n):
-            for v in range(n):
-                if (d[v] > d[u] + a[u][v]):
-                    d[v] = d[u] + a[u][v]
-                    trace[v] = u
-                    stop = False
-        if stop:
+def dijkstra(a, n, d, free, start, end, trace):
+    while True:
+        u = 0;
+        min = 1000;
+        for i in range(n):
+            if free[i] and d[i] < min:
+                min = d[i]
+                u = i
+        if u == -1 or u == end:
             break
+        free[u] = False
+        for v in range(n):
+            if free[v] and d[v] > d[u] + a[u][v]:
+                d[v] = d[u] + a[u][v]
+                trace[v] = u
 
-ford_bellman(a, d, n, nd, start)
+dijkstra(a, n, d, free, start, end, trace)
 
 print(d)
 print(trace)
