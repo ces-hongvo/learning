@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 class Node:
     def __init__(self, key):
         self.key = key

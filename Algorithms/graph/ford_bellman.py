@@ -1,3 +1,4 @@
+from __future__ import print_function
 #Two way Graph
 a = []
 n = 6 #vertices

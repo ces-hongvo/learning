@@ -1,3 +1,4 @@
+from __future__ import print_function
 n = 5
 m = 11
 w = [0, 3, 4, 5, 9, 4]

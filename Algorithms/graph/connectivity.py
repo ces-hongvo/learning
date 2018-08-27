@@ -1,3 +1,4 @@
+from __future__ import print_function
 a = []
 n = 12
 for i in range(n):

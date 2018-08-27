@@ -1,3 +1,4 @@
+from __future__ import print_function
 #Two way Graph
 a = []
 n = 6
@@ -52,7 +53,7 @@ print(d)
 print(trace)
 
 tracePoint = end
-print(tracePoint, end = "<-")
+print(tracePoint, "<-")
 while tracePoint != start:
     print(trace[tracePoint], end = "<-")
     tracePoint = trace[tracePoint]

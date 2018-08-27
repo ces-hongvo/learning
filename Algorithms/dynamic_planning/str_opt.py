@@ -1,3 +1,4 @@
+from __future__ import print_function
 x = 'abcdqqq'
 y = 'eabdft'
 m = len(x)

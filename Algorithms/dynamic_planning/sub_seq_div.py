@@ -1,3 +1,4 @@
+from __future__ import print_function
 a = [1, 6, 11, 5, 10, 15, 20, 2, 4, 9]
 n = len(a)
 k = 5
