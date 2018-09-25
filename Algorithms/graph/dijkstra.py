@@ -53,7 +53,7 @@ print(d)
 print(trace)
 
 tracePoint = end
-print(tracePoint, "<-")
+print(tracePoint, end="<-")
 while tracePoint != start:
-    print(trace[tracePoint], end = "<-")
+    print(trace[tracePoint], end="<-")
     tracePoint = trace[tracePoint]
